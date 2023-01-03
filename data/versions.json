@@ -1,0 +1,387 @@
+{
+    "hits": [
+        {
+            "name": "vue-toast-my",
+            "popular": false,
+            "version": "1.0.5",
+            "description": "a toast plugin for mobile\r ## usage\r import VueToastMy from &#39;vue-toast-my&#39;;\r Vue.use(VueToastMy);\r this.$toast.show(&quot;hello, toast!&quot;, {\r     delay: 5000\r })\r ## Keywords\r vue-toast vue-toast-my toast",
+            "githubRepo": null,
+            "owner": {
+                "name": "dysondzx",
+                "email": "577907416@qq.com",
+                "avatar": "https://gravatar.com/avatar/7820e7da4a286d5e30c31e1d6911a717",
+                "link": "https://www.npmjs.com/~dysondzx"
+            },
+            "deprecated": false,
+            "homepage": null,
+            "license": "ISC",
+            "keywords": [],
+            "created": 1587541297215,
+            "modified": 1653335161716,
+            "lastPublisher": {
+                "name": "dysondzx",
+                "email": "577907416@qq.com",
+                "avatar": "https://gravatar.com/avatar/7820e7da4a286d5e30c31e1d6911a717",
+                "link": "https://www.npmjs.com/~dysondzx"
+            },
+            "changelogFilename": null,
+            "objectID": "vue-toast-my"
+        },
+        {
+            "name": "tao-verify-code",
+            "popular": false,
+            "version": "0.1.0",
+            "description": "package.json 中添加 ```json &quot;name&quot;: &quot;tao-verify-code&quot;, &quot;main&quot;: &quot;lib/tao-verify-code.umd.min.js&quot;, &quot;keywords&quot;: [ // &quot;vue&quot;, // &quot;tao-verify-code&quot;, // &quot;verify-code&quot; ], &quot;private&quot;: false, &quot;scripts&quot;:{ // 但执行npm run lib 时可以打出一个包，把main.js 的东西打  包成···   &quot;lib&quot;: &quot;vue-cli",
+            "githubRepo": null,
+            "owner": {
+                "name": "zowietao",
+                "email": "zowietao@139.com",
+                "avatar": "https://gravatar.com/avatar/2684758f1307de17d8d7c8bc2c2e45f5",
+                "link": "https://www.npmjs.com/~zowietao"
+            },
+            "deprecated": false,
+            "homepage": null,
+            "license": null,
+            "keywords": [
+                "vue",
+                "tao-verify-code",
+                "verify-code"
+            ],
+            "created": 1645759551123,
+            "modified": 1652952613675,
+            "lastPublisher": {
+                "name": "zowietao",
+                "email": "zowietao@139.com",
+                "avatar": "https://gravatar.com/avatar/2684758f1307de17d8d7c8bc2c2e45f5",
+                "link": "https://www.npmjs.com/~zowietao"
+            },
+            "changelogFilename": null,
+            "objectID": "tao-verify-code"
+        },
+        {
+            "name": "vue-pdf-search-keyword",
+            "popular": false,
+            "version": "0.1.3",
+            "description": "Search keywords in PDF. Project base on Vue.js and Pdf.js. This project has new customizations based in https://github.com/Youhandan/vue-pdf-search-preview",
+            "githubRepo": {
+                "user": "italocassio",
+                "project": "vue-pdf-search-preview",
+                "path": "",
+                "head": "7b2425f003d605345798c8d59c6dd02b3c636544"
+            },
+            "owner": {
+                "name": "italocassio",
+                "avatar": "https://github.com/italocassio.png",
+                "link": "https://github.com/italocassio"
+            },
+            "deprecated": false,
+            "homepage": null,
+            "license": "MIT",
+            "keywords": [
+                "vue",
+                "pdf",
+                "search"
+            ],
+            "created": 1604078075623,
+            "modified": 1653327211388,
+            "lastPublisher": {
+                "name": "italocassio",
+                "email": "italocassio95@gmail.com",
+                "avatar": "https://gravatar.com/avatar/e767025569b06f27701cc8c71c78a72e",
+                "link": "https://www.npmjs.com/~italocassio"
+            },
+            "changelogFilename": null,
+            "objectID": "vue-pdf-search-keyword"
+        },
+        {
+            "name": "vue-tdk",
+            "popular": false,
+            "version": "0.0.0",
+            "description": "vue update document=&gt;title description and keywords",
+            "githubRepo": {
+                "user": "webcoding",
+                "project": "vue-tdk",
+                "path": "",
+                "head": "aaefab609995ffeb07bed131bb69e500fcee663c"
+            },
+            "owner": {
+                "name": "webcoding",
+                "avatar": "https://github.com/webcoding.png",
+                "link": "https://github.com/webcoding"
+            },
+            "deprecated": false,
+            "homepage": null,
+            "license": "MIT",
+            "keywords": [
+                "vue",
+                "tdk",
+                "vue-document-title"
+            ],
+            "created": 1480320863002,
+            "modified": 1656448267308,
+            "lastPublisher": {
+                "name": "cloudyan",
+                "email": "1395093509@qq.com",
+                "avatar": "https://gravatar.com/avatar/60ea410fac17367e99495a6834daa2a2",
+                "link": "https://www.npmjs.com/~cloudyan"
+            },
+            "changelogFilename": null,
+            "objectID": "vue-tdk"
+        },
+        {
+            "name": "@flyer2311/vue-sm-scroll",
+            "popular": false,
+            "version": "1.0.1",
+            "description": "this is a plugin used in VUE and based on better-scroll\r ## keywords\r ![](https://img.shields.io/badge/betterScroll-lastest-brightgreen.svg)\r ![](https://img.shields.io/badge/vue-2.0+-brightgreen.svg)\r ![](https://img.shields.io/badge/mobile-support-brigh",
+            "githubRepo": null,
+            "owner": {
+                "name": "flyer2311",
+                "email": "1176518512@qq.com",
+                "avatar": "https://gravatar.com/avatar/d2ceb91c155df93a661d6d89de95f207",
+                "link": "https://www.npmjs.com/~flyer2311"
+            },
+            "deprecated": false,
+            "homepage": null,
+            "license": "ISC",
+            "keywords": [],
+            "created": 1557128780335,
+            "modified": 1649158342938,
+            "lastPublisher": {
+                "name": "flyer2311",
+                "email": "1176518512@qq.com",
+                "avatar": "https://gravatar.com/avatar/d2ceb91c155df93a661d6d89de95f207",
+                "link": "https://www.npmjs.com/~flyer2311"
+            },
+            "changelogFilename": null,
+            "objectID": "@flyer2311/vue-sm-scroll"
+        },
+        {
+            "name": "v-mai-keyword-highlight",
+            "popular": false,
+            "version": "0.0.3",
+            "description": "Vue custom directive to highlight the keywords",
+            "githubRepo": {
+                "user": "cj1205",
+                "project": "v-mai-keyword-highlight",
+                "path": "",
+                "head": "4028443056280d1d254ca25da68c4d7ae8ed1700"
+            },
+            "owner": {
+                "name": "cj1205",
+                "avatar": "https://github.com/cj1205.png",
+                "link": "https://github.com/cj1205"
+            },
+            "deprecated": false,
+            "homepage": null,
+            "license": "MIT",
+            "keywords": [
+                "vue",
+                "directive",
+                "keyword",
+                "highlight"
+            ],
+            "created": 1527715771277,
+            "modified": 1653269159576,
+            "lastPublisher": {
+                "name": "cj1205",
+                "email": "cj1205@qq.com",
+                "avatar": "https://gravatar.com/avatar/a37e8eb7fe33fc6e911dc9d38deb57cf",
+                "link": "https://www.npmjs.com/~cj1205"
+            },
+            "changelogFilename": null,
+            "objectID": "v-mai-keyword-highlight"
+        },
+        {
+            "name": "vue-functional-calendar",
+            "popular": false,
+            "version": "2.9.97",
+            "description": "Lightweight, high-performance calendar component based on Vue.js",
+            "githubRepo": {
+                "user": "ManukMinasyan",
+                "project": "vue-functional-calendar",
+                "path": "",
+                "head": "4b45f04b2d9af42d79e464bd6d97e2c27b3570d8"
+            },
+            "owner": {
+                "name": "ManukMinasyan",
+                "avatar": "https://github.com/ManukMinasyan.png",
+                "link": "https://github.com/ManukMinasyan"
+            },
+            "deprecated": false,
+            "homepage": null,
+            "license": "MIT",
+            "keywords": [
+                "vue",
+                "calendar",
+                "component",
+                "vue-component",
+                "functional",
+                "date picker",
+                "date range",
+                "range",
+                "multiple calendars",
+                "multiple",
+                "modal calendar",
+                "modal",
+                "inline",
+                "date",
+                "change month",
+                "change year",
+                "picker",
+                "day",
+                "month",
+                "year",
+                "time",
+                "add",
+                "cli",
+                "command",
+                "keys",
+                "keyword",
+                "keywords",
+                "line",
+                "package",
+                "pkg"
+            ],
+            "created": 1539708829547,
+            "modified": 1669035511251,
+            "lastPublisher": {
+                "name": "minasyans",
+                "email": "manuk.minasyan1@gmail.com",
+                "avatar": "https://gravatar.com/avatar/8b87a355471b3558ba715d8275d64dbb",
+                "link": "https://www.npmjs.com/~minasyans"
+            },
+            "changelogFilename": null,
+            "objectID": "vue-functional-calendar"
+        },
+        {
+            "name": "vue-hello-world-simple-isecke",
+            "popular": false,
+            "version": "0.1.15",
+            "description": "A simple vuejs Hello World Plugin",
+            "githubRepo": {
+                "user": "tushargugnani",
+                "project": "vue-hello-world-simple",
+                "path": "",
+                "head": "43988dfe7f258995187784f1054245477e6f0c78"
+            },
+            "owner": {
+                "name": "tushargugnani",
+                "avatar": "https://github.com/tushargugnani.png",
+                "link": "https://github.com/tushargugnani"
+            },
+            "deprecated": false,
+            "homepage": null,
+            "license": "MIT",
+            "keywords": [
+                "keywords",
+                "go",
+                "here"
+            ],
+            "created": 1654266466169,
+            "modified": 1654537514952,
+            "lastPublisher": {
+                "name": "marcoisecke",
+                "email": "marcoisecke@hotmail.com",
+                "avatar": "https://gravatar.com/avatar/5207eba6ecdef6b088975d9439cedf76",
+                "link": "https://www.npmjs.com/~marcoisecke"
+            },
+            "changelogFilename": null,
+            "objectID": "vue-hello-world-simple-isecke"
+        },
+        {
+            "name": "vue-virtual-keyboard-cn",
+            "popular": false,
+            "version": "1.3.2",
+            "description": null,
+            "githubRepo": null,
+            "owner": {
+                "name": "monaizi",
+                "email": "358665514@qq.com",
+                "avatar": "https://gravatar.com/avatar/44358ef6a595aa06c319b8c3475268bf",
+                "link": "https://www.npmjs.com/~monaizi"
+            },
+            "deprecated": false,
+            "homepage": "https://github.com/MoNaiZi/vue-virtual-keyboard",
+            "license": null,
+            "keywords": [
+                "vue",
+                "js",
+                "keywords",
+                "中文输入法",
+                "虚拟键盘"
+            ],
+            "created": 1665565699570,
+            "modified": 1670933075271,
+            "lastPublisher": {
+                "name": "monaizi",
+                "email": "358665514@qq.com",
+                "avatar": "https://gravatar.com/avatar/44358ef6a595aa06c319b8c3475268bf",
+                "link": "https://www.npmjs.com/~monaizi"
+            },
+            "changelogFilename": null,
+            "objectID": "vue-virtual-keyboard-cn"
+        },
+        {
+            "name": "gd-vue-orgchart",
+            "popular": false,
+            "version": "0.1.2",
+            "description": "It is a simple organizational chart creation plugin powered by Vue.",
+            "githubRepo": {
+                "user": "ozguracar",
+                "project": "gd-vue-orgchart",
+                "path": "",
+                "head": "3aecb58580c55cd0627cbf8b9f28a12536897d74"
+            },
+            "owner": {
+                "name": "ozguracar",
+                "avatar": "https://github.com/ozguracar.png",
+                "link": "https://github.com/ozguracar"
+            },
+            "deprecated": false,
+            "homepage": null,
+            "license": "MIT",
+            "keywords": [
+                "keywords",
+                "go",
+                "here"
+            ],
+            "created": 1613040269290,
+            "modified": 1651558988321,
+            "lastPublisher": {
+                "name": "ozguracar",
+                "email": "ozgurraca@gmail.com",
+                "avatar": "https://gravatar.com/avatar/d36548efdf25000e8830a4263a41eabf",
+                "link": "https://www.npmjs.com/~ozguracar"
+            },
+            "changelogFilename": null,
+            "objectID": "gd-vue-orgchart"
+        }
+    ],
+    "nbHits": 78,
+    "page": 0,
+    "nbPages": 8,
+    "hitsPerPage": 10,
+    "exhaustiveNbHits": true,
+    "exhaustiveTypo": true,
+    "exhaustive": {
+        "nbHits": true,
+        "typo": true
+    },
+    "query": "keywords:vue",
+    "params": "query=keywords%3Avue&page=0&hitsPerPage=10&attributesToHighlight=%5B%5D&attributesToRetrieve=%5B%22deprecated%22%2C%22description%22%2C%22githubRepo%22%2C%22homepage%22%2C%22keywords%22%2C%22license%22%2C%22name%22%2C%22objectID%22%2C%22owner%22%2C%22version%22%2C%22popular%22%2C%22created%22%2C%22modified%22%2C%22lastPublisher%22%2C%22changelogFilename%22%5D",
+    "processingTimeMS": 11,
+    "processingTimingsMS": {
+        "afterFetch": {
+            "total": 1
+        },
+        "fetch": {
+            "scanning": 1,
+            "total": 9
+        },
+        "request": {
+            "roundTrip": 41
+        },
+        "total": 11
+    },
+    "serverTimeMS": 11
+}

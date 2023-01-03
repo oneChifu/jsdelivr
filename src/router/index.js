@@ -1,6 +1,7 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
-import HomeView from '../views/HomeView.vue';
+import Home from '@/views/Home.vue';
+import NotFound from '@/views/NotFound.vue';
 
 Vue.use(VueRouter);
 
@@ -8,7 +9,35 @@ const routes = [
     {
         path: '/',
         name: 'home',
-        component: HomeView,
+        component: Home,
+    },
+    {
+        path: '/package',
+        name: 'package',
+        component: () => import('@/views/Package.vue'),
+        children: [
+            {
+                path: ':type',
+                children: [
+                    {
+                        path: ':packageId(.*)*',
+                    },
+                ],
+            },
+        ],
+        beforeEnter(to, from, next) {
+            const { params } = to;
+            if (!params.type || !params.packageId) {
+                next('/');
+            } else {
+                next();
+            }
+        },
+    },
+    {
+        path: '/:pathMatch(.*)*',
+        name: 'not-found',
+        component: NotFound,
     },
     // {
     //     path: '/about',

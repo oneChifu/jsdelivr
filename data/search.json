@@ -1,0 +1,364 @@
+{
+    "hits": [
+        {
+            "name": "vue",
+            "popular": true,
+            "version": "3.2.45",
+            "description": "The progressive JavaScript framework for building modern web UI.",
+            "githubRepo": {
+                "user": "vuejs",
+                "project": "core",
+                "path": "",
+                "head": "master"
+            },
+            "owner": {
+                "name": "vuejs",
+                "avatar": "https://github.com/vuejs.png",
+                "link": "https://github.com/vuejs"
+            },
+            "deprecated": false,
+            "homepage": null,
+            "license": "MIT",
+            "keywords": [
+                "vue"
+            ],
+            "created": 1386396586299,
+            "modified": 1668159351575,
+            "lastPublisher": {
+                "name": "yyx990803",
+                "email": "yyx990803@gmail.com",
+                "avatar": "https://gravatar.com/avatar/eca93da2c67aadafe35d477aa8f454b8",
+                "link": "https://www.npmjs.com/~yyx990803"
+            },
+            "changelogFilename": "https://raw.githubusercontent.com/vuejs/core/master/CHANGELOG.md",
+            "objectID": "vue"
+        },
+        {
+            "name": "@vue/compiler-sfc",
+            "popular": true,
+            "version": "3.2.45",
+            "description": "@vue/compiler-sfc",
+            "githubRepo": {
+                "user": "vuejs",
+                "project": "core",
+                "path": "",
+                "head": "master"
+            },
+            "owner": {
+                "name": "vuejs",
+                "avatar": "https://github.com/vuejs.png",
+                "link": "https://github.com/vuejs"
+            },
+            "deprecated": false,
+            "homepage": null,
+            "license": "MIT",
+            "keywords": [
+                "vue"
+            ],
+            "created": 1576867190661,
+            "modified": 1668159335387,
+            "lastPublisher": {
+                "name": "yyx990803",
+                "email": "yyx990803@gmail.com",
+                "avatar": "https://gravatar.com/avatar/eca93da2c67aadafe35d477aa8f454b8",
+                "link": "https://www.npmjs.com/~yyx990803"
+            },
+            "changelogFilename": "https://raw.githubusercontent.com/vuejs/core/master/CHANGELOG.md",
+            "objectID": "@vue/compiler-sfc"
+        },
+        {
+            "name": "vue-template-compiler",
+            "popular": true,
+            "version": "2.7.14",
+            "description": "template compiler for Vue 2.0",
+            "githubRepo": {
+                "user": "vuejs",
+                "project": "vue",
+                "path": "",
+                "head": "master"
+            },
+            "owner": {
+                "name": "vuejs",
+                "avatar": "https://github.com/vuejs.png",
+                "link": "https://github.com/vuejs"
+            },
+            "deprecated": false,
+            "homepage": null,
+            "license": "MIT",
+            "keywords": [
+                "vue",
+                "compiler"
+            ],
+            "created": 1465573668751,
+            "modified": 1667997599754,
+            "lastPublisher": {
+                "name": "yyx990803",
+                "email": "yyx990803@gmail.com",
+                "avatar": "https://gravatar.com/avatar/eca93da2c67aadafe35d477aa8f454b8",
+                "link": "https://www.npmjs.com/~yyx990803"
+            },
+            "changelogFilename": "https://raw.githubusercontent.com/vuejs/vue/master/CHANGELOG.md",
+            "objectID": "vue-template-compiler"
+        },
+        {
+            "name": "eslint-plugin-vue",
+            "popular": true,
+            "version": "9.8.0",
+            "description": "Official ESLint plugin for Vue.js",
+            "githubRepo": {
+                "user": "vuejs",
+                "project": "eslint-plugin-vue",
+                "path": "",
+                "head": "a15d0364418fbeeb4f52d566635424766ce88cb8"
+            },
+            "owner": {
+                "name": "vuejs",
+                "avatar": "https://github.com/vuejs.png",
+                "link": "https://github.com/vuejs"
+            },
+            "deprecated": false,
+            "homepage": "https://eslint.vuejs.org",
+            "license": "MIT",
+            "keywords": [
+                "eslint",
+                "eslint-plugin",
+                "eslint-config",
+                "vue",
+                "vuejs",
+                "rules"
+            ],
+            "created": 1458467336426,
+            "modified": 1669253269456,
+            "lastPublisher": {
+                "name": "ota-meshi",
+                "email": "otameshiyo23@gmail.com",
+                "avatar": "https://gravatar.com/avatar/e77d6b1b22ad17cb0a7ecdb6342933dc",
+                "link": "https://www.npmjs.com/~ota-meshi"
+            },
+            "changelogFilename": null,
+            "objectID": "eslint-plugin-vue"
+        },
+        {
+            "name": "@vue/shared",
+            "popular": true,
+            "version": "3.2.45",
+            "description": "internal utils shared across @vue packages",
+            "githubRepo": {
+                "user": "vuejs",
+                "project": "core",
+                "path": "",
+                "head": "master"
+            },
+            "owner": {
+                "name": "vuejs",
+                "avatar": "https://github.com/vuejs.png",
+                "link": "https://github.com/vuejs"
+            },
+            "deprecated": false,
+            "homepage": null,
+            "license": "MIT",
+            "keywords": [
+                "vue"
+            ],
+            "created": 1583528363068,
+            "modified": 1668159348719,
+            "lastPublisher": {
+                "name": "yyx990803",
+                "email": "yyx990803@gmail.com",
+                "avatar": "https://gravatar.com/avatar/eca93da2c67aadafe35d477aa8f454b8",
+                "link": "https://www.npmjs.com/~yyx990803"
+            },
+            "changelogFilename": "https://raw.githubusercontent.com/vuejs/core/master/CHANGELOG.md",
+            "objectID": "@vue/shared"
+        },
+        {
+            "name": "vuex-class",
+            "popular": true,
+            "version": "0.3.2",
+            "description": "Binding helpers for Vuex and vue-class-component",
+            "githubRepo": {
+                "user": "ktsn",
+                "project": "vuex-class",
+                "path": "",
+                "head": "b4a5112cdbd74b631c95e493b64a541e0faa7acc"
+            },
+            "owner": {
+                "name": "ktsn",
+                "avatar": "https://github.com/ktsn.png",
+                "link": "https://github.com/ktsn"
+            },
+            "deprecated": false,
+            "homepage": null,
+            "license": "MIT",
+            "keywords": [
+                "vue",
+                "vuex",
+                "bindings"
+            ],
+            "created": 1484391574120,
+            "modified": 1656450137801,
+            "lastPublisher": {
+                "name": "ktsn",
+                "email": "ktsn55@gmail.com",
+                "avatar": "https://gravatar.com/avatar/e2fc870af7558b22cb90c227dce7b8dd",
+                "link": "https://www.npmjs.com/~ktsn"
+            },
+            "changelogFilename": null,
+            "objectID": "vuex-class"
+        },
+        {
+            "name": "vue-loader",
+            "popular": true,
+            "version": "17.0.1",
+            "description": "Vue single-file component loader for Webpack",
+            "githubRepo": {
+                "user": "vuejs",
+                "project": "vue-loader",
+                "path": "",
+                "head": "75d2b5d5c7d5cc274f6f1440d6c107d6937d4f1f"
+            },
+            "owner": {
+                "name": "vuejs",
+                "avatar": "https://github.com/vuejs.png",
+                "link": "https://github.com/vuejs"
+            },
+            "deprecated": false,
+            "homepage": null,
+            "license": "MIT",
+            "keywords": [],
+            "created": 1412209910364,
+            "modified": 1668437633467,
+            "lastPublisher": {
+                "name": "soda",
+                "email": "haoqunjiang+npm@gmail.com",
+                "avatar": "https://gravatar.com/avatar/b5ed185c7b40dac342cf37d9edbe5dda",
+                "link": "https://www.npmjs.com/~soda"
+            },
+            "changelogFilename": "https://raw.githubusercontent.com/vuejs/vue-loader/75d2b5d5c7d5cc274f6f1440d6c107d6937d4f1f/CHANGELOG.md",
+            "objectID": "vue-loader"
+        },
+        {
+            "name": "vue-eslint-parser",
+            "popular": true,
+            "version": "9.1.0",
+            "description": "The ESLint custom parser for `.vue` files.",
+            "githubRepo": {
+                "user": "vuejs",
+                "project": "vue-eslint-parser",
+                "path": "",
+                "head": "0631f8c7a2fb9d799cb90b07a95338560c933be8"
+            },
+            "owner": {
+                "name": "vuejs",
+                "avatar": "https://github.com/vuejs.png",
+                "link": "https://github.com/vuejs"
+            },
+            "deprecated": false,
+            "homepage": null,
+            "license": "MIT",
+            "keywords": [],
+            "created": 1481774982084,
+            "modified": 1662693487435,
+            "lastPublisher": {
+                "name": "ota-meshi",
+                "email": "otameshiyo23@gmail.com",
+                "avatar": "https://gravatar.com/avatar/e77d6b1b22ad17cb0a7ecdb6342933dc",
+                "link": "https://www.npmjs.com/~ota-meshi"
+            },
+            "changelogFilename": null,
+            "objectID": "vue-eslint-parser"
+        },
+        {
+            "name": "vuelidate",
+            "popular": true,
+            "version": "0.7.7",
+            "description": "Simple, lightweight model-based validation for Vue.js",
+            "githubRepo": {
+                "user": "monterail",
+                "project": "vuelidate",
+                "path": "",
+                "head": "0b4023543f7ac4599673991f06fd3f57f5bd5ad6"
+            },
+            "owner": {
+                "name": "monterail",
+                "avatar": "https://github.com/monterail.png",
+                "link": "https://github.com/monterail"
+            },
+            "deprecated": false,
+            "homepage": null,
+            "license": "MIT",
+            "keywords": [],
+            "created": 1480432536259,
+            "modified": 1656449875571,
+            "lastPublisher": {
+                "name": "shentao",
+                "email": "damian.dulisz@gmail.com",
+                "avatar": "https://gravatar.com/avatar/7a15999655f748fd1b214f93bddf3227",
+                "link": "https://www.npmjs.com/~shentao"
+            },
+            "changelogFilename": null,
+            "objectID": "vuelidate"
+        },
+        {
+            "name": "vue-style-loader",
+            "popular": true,
+            "version": "4.1.3",
+            "description": "Vue.js style loader module for webpack",
+            "githubRepo": {
+                "user": "vuejs",
+                "project": "vue-style-loader",
+                "path": "",
+                "head": "0f295507a019284300cc1a792ee127a746db36f1"
+            },
+            "owner": {
+                "name": "vuejs",
+                "avatar": "https://github.com/vuejs.png",
+                "link": "https://github.com/vuejs"
+            },
+            "deprecated": false,
+            "homepage": null,
+            "license": "MIT",
+            "keywords": [],
+            "created": 1452021124432,
+            "modified": 1656448060702,
+            "lastPublisher": {
+                "name": "soda",
+                "email": "haoqunjiang+npm@gmail.com",
+                "avatar": "https://gravatar.com/avatar/b5ed185c7b40dac342cf37d9edbe5dda",
+                "link": "https://www.npmjs.com/~soda"
+            },
+            "changelogFilename": "https://cdn.jsdelivr.net/npm/vue-style-loader@4.1.3/CHANGELOG.md",
+            "objectID": "vue-style-loader"
+        }
+    ],
+    "nbHits": 90103,
+    "page": 0,
+    "nbPages": 100,
+    "hitsPerPage": 10,
+    "exhaustiveNbHits": false,
+    "exhaustiveTypo": true,
+    "exhaustive": {
+        "nbHits": false,
+        "typo": true
+    },
+    "query": "vue",
+    "params": "query=vue&page=0&hitsPerPage=10&attributesToHighlight=%5B%5D&attributesToRetrieve=%5B%22deprecated%22%2C%22description%22%2C%22githubRepo%22%2C%22homepage%22%2C%22keywords%22%2C%22license%22%2C%22name%22%2C%22objectID%22%2C%22owner%22%2C%22version%22%2C%22popular%22%2C%22created%22%2C%22modified%22%2C%22lastPublisher%22%2C%22changelogFilename%22%5D&optionalFacetFilters=%5B%22_searchInternal.popularAlternativeNames%3Avue%22%5D",
+    "processingTimeMS": 41,
+    "processingTimingsMS": {
+        "fetch": {
+            "scanning": 38,
+            "total": 38
+        },
+        "getIdx": {
+            "load": {
+                "total": 1
+            },
+            "total": 1
+        },
+        "request": {
+            "roundTrip": 43
+        },
+        "total": 41
+    },
+    "serverTimeMS": 41
+}
