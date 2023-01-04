@@ -9,22 +9,29 @@ const algolia = algoliasearch(
 const npm = algolia.initIndex('npm-search');
 const URL_JSDELIVR = 'https://data.jsdelivr.com/v1';
 
-const $fetch = async (url, options) => {
+async function $get(query, options) {
     try {
-        const response = await fetch(url, options);
+        const response = await fetch(
+            URL_JSDELIVR + query,
+            Object.assign({}, options, {
+                method: 'GET',
+            })
+        );
         return response.json();
     } catch (error) {
         return [error];
     }
-};
+}
 
-function $get(query, options) {
-    return $fetch(
-        URL_JSDELIVR + query,
-        Object.assign({}, options, {
-            method: 'GET',
-        })
-    );
+async function $package(name) {
+    try {
+        const response = await npm.getObject(name);
+
+        console.log('$package', response);
+        return response;
+    } catch (error) {
+        return [error];
+    }
 }
 
 async function $search(query, page, hitsPerPage) {
@@ -48,6 +55,7 @@ async function $search(query, page, hitsPerPage) {
             'popular',
             'created',
             'modified',
+            'repository',
             'lastPublisher',
             'changelogFilename',
         ],
@@ -86,7 +94,7 @@ async function $search(query, page, hitsPerPage) {
             };
         });
     } catch (error) {
-        return error;
+        return [error];
     }
     // });
 }
@@ -125,8 +133,9 @@ async function $search(query, page, hitsPerPage) {
 // }
 
 export default {
-    $get,
     $search,
+    $get,
+    $package,
 };
 
 // export default {

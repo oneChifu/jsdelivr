@@ -1,78 +1,97 @@
 <template>
     <div>
-        <!-- searchLoading - {{ searchLoading }} -->
-        <!-- <pre>{{ searchList }}</pre> -->
-
-        <!-- "nbHits": 90198,
-        "page": 0,
-        "nbPages": 100,
-        "hitsPerPage": 10,
-        "exhaustiveNbHits": false,
-        "exhaustiveTypo": true,
-        "exhaustive": {
-          "nbHits": false,
-          "typo": true
-        },
-        "query": "vue",
-        "params": "query=vue&page=0&hitsPerPage=10&attributesToHighlight=%5B%5D&optionalFacetFilters=%5B%22_searchInternal.popularAlternativeNames%3Avue%22%5D",
-        "processingTimeMS": 44,
-        "processingTimingsMS": {
-          "afterFetch": {
-            "total": 1
-          },
-          "fetch": {
-            "scanning": 42,
-            "total": 42
-          },
-          "request": {
-            "roundTrip": 42
-          },
-          "total": 44
-        },
-        "serverTimeMS": 45 -->
-
-        <div v-if="searchLoading">loading ...</div>
-
-        <template v-if="isSearchList">
+        <template v-if="searchList.hits">
             <v-card
-                v-for="hit in searchList.hits"
-                :key="hit.name"
-                class="mt-2 mb-5 pb-3"
+                v-for="pkg in searchList.hits"
+                :key="pkg.name"
+                class="mt-2 mb-5"
                 outlined
             >
-                <v-card-title class="text-h5 mb-1">
-                    <router-link :to="{ path: `package/npm/${hit.name}` }">
-                        {{ hit.name }}
-                    </router-link>
+                <v-card-title
+                    class="text-h5 d-flex flex-column align-start flex-sm-row justify-sm-space-between"
+                >
+                    <div>
+                        <router-link
+                            :to="{ path: `package/npm/${pkg.name}` }"
+                            class="d-flex align-center"
+                        >
+                            <v-avatar
+                                v-if="pkg.owner.avatar"
+                                size="40"
+                                class="mr-2"
+                            >
+                                <img :src="pkg.owner.avatar" />
+                            </v-avatar>
+
+                            <span class="mr-2">{{ pkg.name }}</span>
+
+                            <v-badge v-if="pkg.deprecated" inline color="error">
+                                <template #badge>deprecated</template>
+                            </v-badge>
+
+                            <v-badge
+                                v-if="searchQuery === pkg.name"
+                                inline
+                                color="primary"
+                            >
+                                <template #badge>exact match</template>
+                            </v-badge>
+                        </router-link>
+                    </div>
+
+                    <div class="mt-2 mt-sm-0">
+                        <v-tooltip v-if="pkg.repository.url" top>
+                            <template v-slot:activator="{ on, attrs }">
+                                <a
+                                    :href="pkg.repository.url"
+                                    target="_blank"
+                                    class="v-btn v-btn--icon v-btn--outlined v-btn--round v-btn--tile theme--light v-size--default grey--text mr-2"
+                                    v-bind="attrs"
+                                    v-on="on"
+                                >
+                                    <v-icon class="black--text"
+                                        >mdi-github</v-icon
+                                    >
+                                </a>
+                            </template>
+                            <span>GitHub</span>
+                        </v-tooltip>
+
+                        <v-tooltip v-if="pkg.repository.url" top>
+                            <template v-slot:activator="{ on, attrs }">
+                                <a
+                                    :href="`https://www.npmjs.com/package/${pkg.name}`"
+                                    target="_blank"
+                                    class="v-btn v-btn--icon v-btn--outlined v-btn--round v-btn--tile theme--light v-size--default grey--text"
+                                    v-bind="attrs"
+                                    v-on="on"
+                                >
+                                    <v-icon class="black--text">mdi-npm</v-icon>
+                                </a>
+                            </template>
+                            <span>NPM</span>
+                        </v-tooltip>
+                    </div>
                 </v-card-title>
-                <v-card-text>
-                    {{ hit.description }}
+
+                <v-card-text v-if="pkg.description">
+                    {{ pkg.description }}
                 </v-card-text>
 
-                <v-card-actions v-if="hit.keywords.length" class="flex-wrap">
-                    <v-chip
-                        v-for="(keyword, index) in hit.keywords"
-                        :key="index"
-                        class="mr-2 mb-2"
-                        label
-                        link
-                    >
-                        {{ keyword }}
-                    </v-chip>
-                </v-card-actions>
-
-                <v-card-actions>
-                    <v-avatar size="30" class="mr-2">
-                        <img :src="hit.lastPublisher.avatar" />
-                    </v-avatar>
-                    <a :href="hit.lastPublisher.link" target="_blank">
-                        <b>{{ hit.lastPublisher.name }}</b>
-                    </a>
-                    <i class="ml-2">• published {{ hit.version }}</i>
-                    <i class="ml-2"> • {{ hit.modified | moment('from') }} </i>
-                </v-card-actions>
-
-                <!-- <pre>{{ hit }}</pre> -->
+                <div v-if="pkg.keywords.length" class="flex-wrap px-4">
+                    <v-chip-group column>
+                        <v-chip
+                            v-for="(keyword, index) in pkg.keywords"
+                            :key="index"
+                            class="mr-2 my-1"
+                            label
+                            link
+                            outlined
+                        >
+                            {{ keyword }}
+                        </v-chip>
+                    </v-chip-group>
+                </div>
             </v-card>
 
             <v-pagination
@@ -84,18 +103,16 @@
             ></v-pagination>
         </template>
 
-        <h3 v-else-if="!searchLoading && !isSearchList">No packages</h3>
+        <h2 v-else-if="!searchList && !searchList.loading && !searchList.hits">
+            No packages
+        </h2>
     </div>
 </template>
 
 <script>
 import { mapActions, mapMutations, mapGetters } from 'vuex';
 import { FETCH_SEARCH_LIST } from '@/store/actions.type';
-import {
-    GET_SEARCH_LOADING,
-    GET_SEARCH_QUERY,
-    GET_SEARCH_LIST,
-} from '@/store/getters.type';
+import { GET_SEARCH_QUERY, GET_SEARCH_LIST } from '@/store/getters.type';
 import { SET_SEARCH_QUERY } from '@/store/mutations.type';
 
 export default {
@@ -107,7 +124,6 @@ export default {
 
     computed: {
         ...mapGetters({
-            searchLoading: GET_SEARCH_LOADING,
             searchQuery: GET_SEARCH_QUERY,
             searchList: GET_SEARCH_LIST,
         }),
@@ -124,39 +140,16 @@ export default {
     watch: {
         page: {
             handler(page) {
-                if (page) {
-                    if (Number(page) <= 1) {
-                        page = undefined;
-                    }
-
-                    this.$router
-                        .replace({
-                            query: { ...this.$route.query, page },
-                        })
-                        .catch(() => {});
-                }
-            },
-        },
-        '$route.query.page': {
-            handler(page) {
-                if (page) {
-                    this.page = Number(page);
-
-                    if (this.page <= 1) {
-                        this.$router
-                            .replace({
-                                query: {
-                                    ...this.$route.query,
-                                    page: undefined,
-                                },
-                            })
-                            .catch(() => {});
-                    }
+                if (Number(page) <= 1) {
+                    page = undefined;
                 }
 
-                console.log('WATCH PAGE ROUTE', page);
+                this.$router
+                    .replace({
+                        query: { ...this.$route.query, page },
+                    })
+                    .catch(() => {});
             },
-            immediate: true,
         },
     },
 
@@ -166,5 +159,3 @@ export default {
     },
 };
 </script>
-
-<style></style>

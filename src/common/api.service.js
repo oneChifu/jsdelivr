@@ -8,4 +8,8 @@ export const NpmService = {
     popular(period = 'month') {
         return npmfetch.$get(`/stats/packages/${period}`);
     },
+
+    package(name) {
+        return npmfetch.$package(name);
+    },
 };

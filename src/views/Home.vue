@@ -1,7 +1,6 @@
 <template>
     <v-container>
-        <SearchList v-if="isQuery" />
-        <PopularList v-else />
+        <SearchList />
     </v-container>
 </template>
 
@@ -15,8 +14,7 @@ import {
     GET_POPULAR,
 } from '@/store/getters.type';
 import SearchList from '@/components/SearchList';
-import PopularList from '@/components/PopularList';
-import { SET_SEARCH_QUERY } from '@/store/mutations.type';
+import { SET_SEARCH_QUERY, SET_SEARCH_LIST } from '@/store/mutations.type';
 
 export default {
     name: 'HomePage',
@@ -29,62 +27,37 @@ export default {
             searchList: GET_SEARCH_LIST,
             popular: GET_POPULAR,
         }),
-
-        isQuery() {
-            return Boolean(this.searchQuery || this.$route.query.query);
-        },
     },
 
     watch: {
-        searchQuery: {
-            handler(query) {
-                if (!query) {
-                    this.$router.replace({ path: '/' }).catch(() => {});
-                } else {
-                    let { page } = this.$route.query;
-
-                    this.$router
-                        .replace({
-                            query: { query, page },
-                        })
-                        .catch(() => {});
-                }
-            },
-        },
-
         $route: {
             async handler(route) {
                 const { query, page } = route.query;
 
                 if (query) {
-                    console.log('throttle');
                     await throttle(this[FETCH_SEARCH_LIST], 200, {
                         query,
                         page,
                     });
-
-                    console.log('setTimeout');
                     setTimeout(() => {
-                        window.scroll({
-                            top: 0,
-                            behavior: 'smooth',
-                        });
+                        this.$vuetify.goTo(0);
                     }, 150);
+                } else {
+                    this[SET_SEARCH_QUERY]('');
                 }
             },
-            deep: true,
             immediate: true,
+            deep: true,
         },
     },
 
     methods: {
         ...mapActions([FETCH_SEARCH_LIST]),
-        ...mapMutations([SET_SEARCH_QUERY]),
+        ...mapMutations([SET_SEARCH_QUERY, SET_SEARCH_LIST]),
     },
 
     components: {
         SearchList,
-        PopularList,
     },
 };
 </script>

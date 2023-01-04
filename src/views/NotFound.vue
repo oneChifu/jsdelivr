@@ -8,7 +8,5 @@
 <script>
 export default {
     name: 'NotFoundPage',
-
-    data: () => ({}),
 };
 </script>

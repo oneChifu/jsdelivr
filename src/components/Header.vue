@@ -1,29 +1,53 @@
 <template>
-    <v-app-bar absolute elevation="0" dark app class="mb-5">
-        <v-container class="pa-0 d-flex align-content-center align-center">
-            <v-toolbar-title style="width: 50%">
+    <v-app-bar
+        app
+        absolute
+        elevation="0"
+        :height="isSearchQuery ? 60 : 100"
+        :dark="isSearchQuery"
+        :class="[
+            'header',
+            {
+                header__center: !isSearchQuery,
+            },
+        ]"
+    >
+        <v-container>
+            <v-toolbar-title>
                 <router-link to="/"><b>JSDelivr</b></router-link>
             </v-toolbar-title>
 
-            <v-spacer></v-spacer>
-
-            <div style="width: 100%">
-                <Search />
+            <div class="header_search">
+                <SearchInput />
             </div>
         </v-container>
     </v-app-bar>
 </template>
 
 <script>
-import Search from '@/components/Search';
+import { mapGetters } from 'vuex';
+import { GET_SEARCH_QUERY } from '@/store/getters.type';
+import SearchInput from '@/components/SearchInput';
 
 export default {
     name: 'HeaderComponent',
 
+    computed: {
+        ...mapGetters({
+            searchQuery: GET_SEARCH_QUERY,
+        }),
+
+        isSearchQuery() {
+            return Boolean(this.searchQuery || this.$route.name !== 'home');
+        },
+    },
+
     components: {
-        Search,
+        SearchInput,
     },
 };
 </script>
 
-<style></style>
+<style lang="scss">
+@import '@/scss/header.scss';
+</style>

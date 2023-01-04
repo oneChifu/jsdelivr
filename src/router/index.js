@@ -13,21 +13,21 @@ const routes = [
     },
     {
         path: '/package',
-        name: 'package',
         component: () => import('@/views/Package.vue'),
         children: [
             {
                 path: ':type',
                 children: [
                     {
-                        path: ':packageId(.*)*',
+                        path: ':name(.*)*',
+                        name: 'package',
                     },
                 ],
             },
         ],
         beforeEnter(to, from, next) {
             const { params } = to;
-            if (!params.type || !params.packageId) {
+            if (!params.type || !params.name) {
                 next('/');
             } else {
                 next();

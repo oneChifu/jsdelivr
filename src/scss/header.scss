@@ -1,0 +1,68 @@
+@import './mixins';
+
+.header {
+    .container {
+        @include media('sm-and-down') {
+            padding-left: 0;
+            padding-right: 0;
+        }
+    }
+    .v-toolbar__title {
+        display: flex;
+        align-items: center;
+
+        a {
+            color: #fff;
+        }
+    }
+    &_search {
+        display: flex;
+        justify-content: flex-end;
+
+        .v-input {
+            max-width: 400px;
+        }
+    }
+
+    &__center {
+        transition: none;
+        top: 50% !important;
+        transform: translateY(-50%) !important;
+
+        .v-toolbar__title {
+            justify-content: center;
+            font-size: 30px;
+
+            a {
+                color: map-get($blue, 'darken-1');
+            }
+        }
+        .header_search {
+            justify-content: center;
+        }
+    }
+    &:not(.header__center) {
+        .container {
+            display: flex;
+            justify-content: space-between;
+        }
+        .v-toolbar__title {
+            margin-right: 10px;
+            font-size: 16px;
+
+            @include media('sm-and-up') {
+                font-size: 22px;
+            }
+            @include media('md-and-up') {
+                font-size: 30px;
+            }
+        }
+        .header_search {
+            flex: 1;
+            // width: 100%;
+        }
+    }
+    // v-input v-input--hide-details theme--light v-text-field v-text-field--single-line v-text-field--solo v-text-field--solo-flat v-text-field--is-booted v-text-field--enclosed v-text-field--placeholder
+}
+
+// v-sheet theme--light elevation-0 v-toolbar v-toolbar--absolute v-app-bar header
