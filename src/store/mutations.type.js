@@ -1,3 +1,7 @@
+// Common
+export const SET_SNACKBAR = 'setSnackbar';
+
+// Packages
 export const SET_SEARCH_QUERY = 'setSearchQuery';
 export const SET_SEARCH_LIST = 'setSearchList';
 export const SET_POPULAR_LIST = 'setPopularList';

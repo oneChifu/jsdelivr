@@ -1,13 +1,13 @@
 <template>
-    <v-snackbar v-model="showSnackbar" :color="color">
-        {{ text }}
+    <v-snackbar v-model="snackbar.show" :color="snackbar.color">
+        {{ snackbar.text }}
 
         <template v-slot:action="{ attrs }">
             <v-btn
                 text
-                :timeout="timeout"
+                :timeout="snackbar.timeout"
                 v-bind="attrs"
-                @click="showSnackbar = false"
+                @click="hideSnackbar"
             >
                 Close
             </v-btn>
@@ -16,6 +16,10 @@
 </template>
 
 <script>
+import { mapMutations, mapGetters } from 'vuex';
+import { SET_SNACKBAR } from '@/store/mutations.type';
+import { GET_SNACKBAR } from '@/store/getters.type';
+
 export default {
     name: 'SnackbarComponent',
 
@@ -26,14 +30,17 @@ export default {
         text: '',
     }),
 
-    methods: {
-        show(data) {
-            const { color, timeout, text } = data;
+    computed: {
+        ...mapGetters({
+            snackbar: GET_SNACKBAR,
+        }),
+    },
 
-            this.color = color || 'success';
-            this.timeout = timeout || 2000;
-            this.text = text;
-            this.showSnackbar = true;
+    methods: {
+        ...mapMutations([SET_SNACKBAR]),
+
+        hideSnackbar() {
+            this[SET_SNACKBAR]({ show: false });
         },
     },
 };

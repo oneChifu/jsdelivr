@@ -58,8 +58,8 @@
                     </v-col>
                 </v-row>
 
-                <v-rowl v-if="pkg.repository" no-gutters>
-                    <v-co cols="12">
+                <v-row v-if="pkg.repository" no-gutters>
+                    <v-col cols="12">
                         <div class="subtitle-1">Repository</div>
                         <div class="d-flex">
                             <v-icon color="black" left size="24">
@@ -73,8 +73,8 @@
                                 <b>{{ pkg.repository.url }}</b>
                             </a>
                         </div>
-                    </v-co>
-                </v-rowl>
+                    </v-col>
+                </v-row>
 
                 <v-divider v-if="pkg.homepage" class="my-3" />
 
@@ -171,7 +171,7 @@
 import copyClipboard from '@/utils/copy-clipboard';
 import VueMarkdown from 'vue-markdown/src/VueMarkdown';
 import { mapActions, mapGetters } from 'vuex';
-import { FETCH_PACKAGE_DATA } from '@/store/actions.type';
+import { ADD_SNACKBAR, FETCH_PACKAGE_DATA } from '@/store/actions.type';
 import { GET_PACKAGE_DATA } from '@/store/getters.type';
 
 export default {
@@ -202,11 +202,11 @@ export default {
     },
 
     methods: {
-        ...mapActions([FETCH_PACKAGE_DATA]),
+        ...mapActions([FETCH_PACKAGE_DATA, ADD_SNACKBAR]),
 
         onCopyClipboard(text) {
             copyClipboard(text);
-            this.$root.snackbar.show({ text: 'Copied to clipboard!' });
+            this[ADD_SNACKBAR]({ text: 'Copied to clipboard!' });
         },
     },
 

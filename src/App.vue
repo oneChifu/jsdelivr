@@ -7,7 +7,8 @@
         </v-main>
 
         <Footer v-if="isSearchQuery" />
-        <Snackbar ref="snackbar" />
+
+        <Snackbar />
     </v-app>
 </template>
 
@@ -29,10 +30,6 @@ export default {
         isSearchQuery() {
             return Boolean(this.searchQuery || this.$route.name !== 'home');
         },
-    },
-
-    mounted() {
-        this.$root.snackbar = this.$refs.snackbar;
     },
 
     components: {

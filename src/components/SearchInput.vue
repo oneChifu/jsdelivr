@@ -16,22 +16,25 @@
 <script>
 import { mapMutations, mapGetters } from 'vuex';
 import { SET_SEARCH_QUERY, SET_SEARCH_LIST } from '@/store/mutations.type';
-import { GET_SEARCH_QUERY, GET_SEARCH_LIST } from '@/store/getters.type';
+import { GET_SEARCH_QUERY } from '@/store/getters.type';
 
 export default {
     name: 'SearchInputComponent',
 
     computed: {
         ...mapGetters({
-            searchList: GET_SEARCH_LIST,
             searchQuery: GET_SEARCH_QUERY,
         }),
     },
 
     watch: {
         '$route.query.query': {
-            handler(query) {
+            handler(query, queryOld) {
                 this[SET_SEARCH_QUERY](query || '');
+
+                if (!query && queryOld) {
+                    this[SET_SEARCH_LIST]();
+                }
             },
             immediate: true,
         },
@@ -47,12 +50,14 @@ export default {
 
             this[SET_SEARCH_QUERY](query);
 
+            query = this.searchQuery || undefined;
+
             this.$router
                 .replace({
                     path: '/',
                     query: {
                         ...this.$route.query,
-                        query: this.searchQuery ? this.searchQuery : undefined,
+                        query,
                     },
                 })
                 .catch(() => {});

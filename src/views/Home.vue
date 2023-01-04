@@ -27,8 +27,6 @@ export default {
                     setTimeout(() => {
                         this.$vuetify.goTo(0);
                     }, 150);
-                } else {
-                    this[SET_SEARCH_QUERY]('');
                 }
             },
             immediate: true,

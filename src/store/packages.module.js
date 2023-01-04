@@ -22,7 +22,7 @@ import {
 
 export const state = {
     searchQuery: '',
-    searchList: [],
+    searchList: {},
     popularList: [],
     popularListType: '',
     popularListDate: '',
@@ -35,7 +35,7 @@ export const actions = {
         perPage = perPage < 10 ? 10 : perPage > 200 ? 200 : perPage;
 
         if (!state.searchList.hits) {
-            commit(SET_SEARCH_LIST, [{ loading: true }]);
+            commit(SET_SEARCH_LIST, { loading: true });
         }
 
         const { response: data } = await NpmService.search({
@@ -93,7 +93,7 @@ export const mutations = {
     },
 
     [SET_SEARCH_LIST](state, data) {
-        state.searchList = data;
+        state.searchList = data || {};
     },
 
     [SET_POPULAR_LIST](state, data) {
