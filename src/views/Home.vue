@@ -6,28 +6,13 @@
 
 <script>
 import throttle from '@/utils/throttle';
-import { mapActions, mapMutations, mapGetters } from 'vuex';
+import { mapActions, mapMutations } from 'vuex';
 import { FETCH_SEARCH_LIST } from '@/store/actions.type';
-import {
-    GET_SEARCH_QUERY,
-    GET_SEARCH_LIST,
-    GET_POPULAR,
-} from '@/store/getters.type';
+import { SET_SEARCH_QUERY } from '@/store/mutations.type';
 import SearchList from '@/components/SearchList';
-import { SET_SEARCH_QUERY, SET_SEARCH_LIST } from '@/store/mutations.type';
 
 export default {
     name: 'HomePage',
-
-    data: () => ({}),
-
-    computed: {
-        ...mapGetters({
-            searchQuery: GET_SEARCH_QUERY,
-            searchList: GET_SEARCH_LIST,
-            popular: GET_POPULAR,
-        }),
-    },
 
     watch: {
         $route: {
@@ -53,7 +38,7 @@ export default {
 
     methods: {
         ...mapActions([FETCH_SEARCH_LIST]),
-        ...mapMutations([SET_SEARCH_QUERY, SET_SEARCH_LIST]),
+        ...mapMutations([SET_SEARCH_QUERY]),
     },
 
     components: {
