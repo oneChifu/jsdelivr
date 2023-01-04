@@ -13,7 +13,9 @@ cd dist
 # echo 'www.example.com' > CNAME
 
 git init
-git add -A
+git remote add origin git@github.com:onechifu/jsdelivr.git
+git branch -M main
+git add .
 git commit -m 'deploy'
 
 # if you are deploying to https://<USERNAME>.github.io
