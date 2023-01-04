@@ -5,37 +5,38 @@ import NotFound from '@/views/NotFound.vue';
 
 Vue.use(VueRouter);
 
+const jsdelivr = process.env.NODE_ENV === 'production' ? '/jsdelivr/' : '/';
+
 const routes = [
     {
         path: '/',
+        redirect: { name: 'home' },
+    },
+    {
+        path: jsdelivr,
         name: 'home',
         component: Home,
     },
     {
-        path: '/package',
+        path: `${jsdelivr}:path/:type`,
+        redirect: { name: 'home' },
+    },
+    {
+        path: `${jsdelivr}:path/:type/:name/(.*)*`,
+        name: 'package',
         component: () => import('@/views/Package.vue'),
-        children: [
-            {
-                path: ':type',
-                children: [
-                    {
-                        path: ':name(.*)*',
-                        name: 'package',
-                    },
-                ],
-            },
-        ],
         beforeEnter(to, from, next) {
             const { params } = to;
-            if (!params.type || !params.name) {
-                next('/');
+
+            if (params.pathMatch) {
+                next({ name: 'not-found' });
             } else {
                 next();
             }
         },
     },
     {
-        path: '/:pathMatch(.*)*',
+        path: `/404(.*)*`,
         name: 'not-found',
         component: NotFound,
     },
