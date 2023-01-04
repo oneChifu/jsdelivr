@@ -7,7 +7,7 @@
         "build": "vue-cli-service build",
         "test:unit": "vue-cli-service test:unit",
         "lint": "vue-cli-service lint",
-        "deploy": "vue-cli-service build && push-dir --dir=dist --branch=gh-pages --cleanup"
+        "deploy": "sh deploy.sh"
     },
     "dependencies": {
         "algoliasearch": "^4.14.3",
