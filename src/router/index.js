@@ -20,9 +20,7 @@ const routes = [
         name: 'package',
         component: () => import('@/views/Package.vue'),
         beforeEnter(to, from, next) {
-            const { params } = to;
-
-            if (params.pathMatch) {
+            if (to.params.pathMatch) {
                 next({ name: 'not-found' });
             } else {
                 next();
@@ -31,14 +29,23 @@ const routes = [
     },
     {
         path: '/404',
-        name: 'not-found',
+        name: '404',
         component: NotFound,
+        props: true,
     },
-    { path: ':pathMatch(.*)*', redirect: '/404' },
+    {
+        path: '*',
+        redirect: {
+            name: '404',
+            params: {
+                resource: 'page',
+            },
+        },
+    },
 ];
 
 const router = new VueRouter({
-    mode: 'history',
+    mode: 'hash',
     base: process.env.BASE_URL,
     routes,
 });
