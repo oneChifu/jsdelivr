@@ -41,11 +41,11 @@
             </v-col>
 
             <v-col cols="12" class="col-md-4">
-                <v-row v-if="pkg.name" no-gutters>
+                <v-row no-gutters>
                     <v-col cols="12">
                         <div class="subtitle-1">Install</div>
                         <v-chip
-                            class="pkg_copy-clipboard mb-5"
+                            class="pkg_copy-clipboard mb-3"
                             label
                             outlined
                             large
@@ -55,6 +55,22 @@
                             npm install {{ pkg.name }}
                             <v-icon right>mdi-content-copy</v-icon>
                         </v-chip>
+                    </v-col>
+                </v-row>
+
+                <v-row no-gutters>
+                    <v-col cols="12">
+                        <v-btn
+                            :href="[pkg.name, pkg.version] | packageDownloadUrl"
+                            class="mb-5"
+                            dark
+                            depressed
+                            x-large
+                            block
+                        >
+                            <v-icon left large>mdi-download</v-icon>
+                            Download
+                        </v-btn>
                     </v-col>
                 </v-row>
 

@@ -32,32 +32,57 @@
             <div class="mt-2 mt-sm-0">
                 <v-tooltip v-if="pkg.repository && pkg.repository.url" top>
                     <template v-slot:activator="{ on, attrs }">
-                        <a
+                        <v-btn
                             :href="pkg.repository.url"
                             target="_blank"
-                            class="v-btn v-btn--icon v-btn--outlined v-btn--round v-btn--tile theme--light v-size--default grey--text mr-2"
+                            class="mr-2"
+                            outlined
+                            tile
+                            icon
+                            color="grey"
                             v-bind="attrs"
                             v-on="on"
                         >
                             <v-icon class="black--text">mdi-github</v-icon>
-                        </a>
+                        </v-btn>
                     </template>
                     <span>GitHub</span>
                 </v-tooltip>
 
-                <v-tooltip v-if="pkg.name" top>
+                <v-tooltip top>
                     <template v-slot:activator="{ on, attrs }">
-                        <a
+                        <v-btn
                             :href="`https://www.npmjs.com/package/${pkg.name}`"
                             target="_blank"
-                            class="v-btn v-btn--icon v-btn--outlined v-btn--round v-btn--tile theme--light v-size--default grey--text"
+                            class="mr-2"
+                            outlined
+                            tile
+                            icon
+                            color="grey"
                             v-bind="attrs"
                             v-on="on"
                         >
                             <v-icon class="black--text">mdi-npm</v-icon>
-                        </a>
+                        </v-btn>
                     </template>
                     <span>NPM</span>
+                </v-tooltip>
+
+                <v-tooltip top>
+                    <template v-slot:activator="{ on, attrs }">
+                        <v-btn
+                            :href="[pkg.name, pkg.version] | packageDownloadUrl"
+                            outlined
+                            tile
+                            icon
+                            color="grey"
+                            v-bind="attrs"
+                            v-on="on"
+                        >
+                            <v-icon class="black--text">mdi-download</v-icon>
+                        </v-btn>
+                    </template>
+                    <span>Download</span>
                 </v-tooltip>
             </div>
         </v-card-title>
